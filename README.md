@@ -26,7 +26,7 @@ To install: please prepare mysql2, inquirer for cmd line and see usage video
 
 Please follow instructional video
 
-* ![Instructional Video](https://www.youtube.com/watch?v=oJXR1ZtDOC8)
+* ![[Instructional Video](https://www.youtube.com/watch?v=oJXR1ZtDOC8/0.jpg)](https://www.youtube.com/watch?v=oJXR1ZtDOC8 "Inst Video")
 
 ## Credits
 

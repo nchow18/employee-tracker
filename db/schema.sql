@@ -1,0 +1,28 @@
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS role;
+DROP TABLE IF EXISTS department;
+DROP TABLE IF EXISTS manager;
+CREATE TABLE employees (
+ id INTEGER PRIMARY KEY,
+ first_name VARCHAR(30) NOT NULL,
+ last_name VARCHAR(30) NOT NULL,
+ role_id INTEGER UNSIGNED NOT NULL,
+ manager_id INTEGER UNSIGNED NOT NULL,
+ CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE SET NULL,
+ CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES manager(id) on DELETE SET NULL
+);
+CREATE TABLE role (
+ id INTEGER PRIMARY KEY,
+ title VARCHAR(30) NOT NULL,
+ salary DECIMAL,
+ department_id,
+ CONSTRAINT fk_department FOREIGN KEY (department_id) REFERENCES department(id) ON DELETE SET NULL
+);
+CREATE TABLE department (
+ id INTEGER PRIMARY KEY,
+ name VARCHAR(30) NOT NULL
+);
+CREATE TABLE manager (
+ id INTEGER PRIMARY KEY,
+ name VARCHAR(30) NOT NULL
+);

@@ -2,6 +2,24 @@ const inquirer = require('inquirer');
 const cTable = require('console.table');
 const mysql = require('mysql2');
 
+const sqlConnect = () => {
+    // create the connection to database
+    const connection = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        database: 'test'
+    });
+   
+  // simple query
+  connection.query(
+    'SELECT * FROM `table` WHERE `name` = "Page" AND `age` > 45',
+    function(err, results, fields) {
+      console.log(results); // results contains rows returned by server
+      console.log(fields); // fields contains extra meta data about results, if available
+    }
+  );
+}
+
 optionRoles = ['Lead Engineer', 'Software Engineer', 'Lead Accountant', 'Junior Accountant', 'Lead Sales', 'Junior Sales', 'Associate Lawyer', 'Junior Lawyer']
 
 optionDep = ['Engineering', 'Finance', 'Sales', 'Legal']
